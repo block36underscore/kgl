@@ -94,4 +94,6 @@ expect class Window(
 	fun setMouseButtonCallback(callback: MouseButtonCallback?): MouseButtonCallback?
 	fun setCharCallback(callback: CharCallback?): CharCallback?
 	fun setCharModsCallback(callback: CharModsCallback?): CharModsCallback?
+
+	override fun close()
 }

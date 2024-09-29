@@ -22,7 +22,7 @@ import org.lwjgl.vulkan.*
 import org.lwjgl.vulkan.VK11.*
 
 actual class DescriptorSetLayout(override val ptr: Long, actual val device: Device) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val descriptorSetLayout = this
 		val device = descriptorSetLayout.device
 		MemoryStack.stackPush()

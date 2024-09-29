@@ -23,7 +23,7 @@ import org.lwjgl.vulkan.KHRExternalSemaphoreFd.*
 import org.lwjgl.vulkan.VK11.*
 
 actual class Semaphore(override val ptr: Long, actual val device: Device) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val semaphore = this
 		val device = semaphore.device
 		MemoryStack.stackPush()

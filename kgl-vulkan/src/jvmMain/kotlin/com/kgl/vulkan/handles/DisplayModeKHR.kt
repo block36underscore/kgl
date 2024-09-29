@@ -29,7 +29,7 @@ actual class DisplayModeKHR(
 	actual val physicalDevice: PhysicalDevice,
 	actual val display: DisplayKHR
 ) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		TODO()
 	}
 

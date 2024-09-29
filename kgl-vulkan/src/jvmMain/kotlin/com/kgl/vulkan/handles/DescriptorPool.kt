@@ -26,7 +26,7 @@ actual class DescriptorPool(
 	actual val device: Device,
 	actual val maxSets: UInt
 ) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val descriptorPool = this
 		val device = descriptorPool.device
 		MemoryStack.stackPush()

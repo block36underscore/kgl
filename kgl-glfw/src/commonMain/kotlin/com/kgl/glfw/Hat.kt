@@ -8,6 +8,8 @@ expect enum class Hat : Flag<Hat> {
 	DOWN,
 	LEFT;
 
+	override val value: Int
+
 	companion object
 }
 

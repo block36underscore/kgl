@@ -24,7 +24,7 @@ import org.lwjgl.vulkan.NVXDeviceGeneratedCommands.*
 import org.lwjgl.vulkan.VK11.*
 
 actual class ObjectTableNVX(override val ptr: Long, actual val device: Device) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val objectTable = this
 		val device = objectTable.device
 		MemoryStack.stackPush()

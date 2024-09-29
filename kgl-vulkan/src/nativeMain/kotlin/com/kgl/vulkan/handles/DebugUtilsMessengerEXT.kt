@@ -27,7 +27,7 @@ actual class DebugUtilsMessengerEXT(
 ) : VkHandleNative<VkDebugUtilsMessengerEXT>(), VkHandle {
 	internal val dispatchTable = instance.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val messenger = this
 		val instance = messenger.instance
 		VirtualStack.push()

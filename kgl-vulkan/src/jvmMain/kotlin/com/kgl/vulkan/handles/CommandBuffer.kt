@@ -43,7 +43,7 @@ import org.lwjgl.vulkan.VK11.*
 
 actual class CommandBuffer(override val ptr: VkCommandBuffer, actual val commandPool: CommandPool) :
 	VkHandleJVM<VkCommandBuffer>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		vkFreeCommandBuffers(commandPool.device.ptr, commandPool.ptr, ptr)
 	}
 

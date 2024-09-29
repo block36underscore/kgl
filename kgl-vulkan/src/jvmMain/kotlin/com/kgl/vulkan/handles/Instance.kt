@@ -87,7 +87,7 @@ actual class Instance(
 			}
 		}
 
-	override fun close() {
+	override actual fun close() {
 		val instance = this
 		MemoryStack.stackPush()
 		try {

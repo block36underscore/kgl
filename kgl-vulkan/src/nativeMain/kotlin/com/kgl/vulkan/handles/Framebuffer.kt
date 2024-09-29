@@ -31,7 +31,7 @@ actual class Framebuffer(
 ) : VkHandleNative<VkFramebuffer>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val framebuffer = this
 		val device = framebuffer.device
 		VirtualStack.push()

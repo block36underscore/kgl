@@ -23,7 +23,7 @@ import org.lwjgl.vulkan.KHRExternalFenceFd.*
 import org.lwjgl.vulkan.VK11.*
 
 actual class Fence(override val ptr: Long, actual val device: Device) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val fence = this
 		val device = fence.device
 		MemoryStack.stackPush()

@@ -28,7 +28,7 @@ actual class ObjectTableNVX(
 ) : VkHandleNative<VkObjectTableNVX>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val objectTable = this
 		val device = objectTable.device
 		VirtualStack.push()

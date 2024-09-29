@@ -65,4 +65,6 @@ expect class Instance : VkHandle {
 			block: InstanceCreateInfoBuilder.() -> Unit = {}
 		): Instance
 	}
+
+	override fun close()
 }

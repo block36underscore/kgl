@@ -4,13 +4,13 @@ import org.jetbrains.kotlin.konan.target.*
 import java.io.*
 
 plugins {
-	kotlin("multiplatform") version ("1.4.10") apply false
-	id("de.undercouch.download") version ("3.4.3") apply false
+	kotlin("multiplatform") version ("2.0.20") apply false
+	id("de.undercouch.download") version ("5.6.0") apply false
 }
 
 val stdout = ByteArrayOutputStream()
 exec {
-	commandLine("git", "describe", "--tags")
+	commandLine("git", "describe", "--tags", "--always")
 	standardOutput = stdout
 }
 
@@ -18,8 +18,8 @@ group = "com.kgl"
 version = stdout.toString().trim()
 
 val useSingleTarget: Boolean by extra { System.getProperty("idea.active") == "true" }
-val ktorIoVersion: String by extra("1.4.0")
-val lwjglVersion: String by extra("3.2.2") //TODO 3.2.3 causes kgl-vulkan compile to fail
+val ktorIoVersion: String by extra("2.3.12")
+val lwjglVersion: String by extra("3.3.4")
 val lwjglNatives: String by extra {
 	when {
 		HostManager.hostIsLinux -> "natives-linux"
@@ -29,22 +29,24 @@ val lwjglNatives: String by extra {
 	}
 }
 
-subprojects {
-	group = rootProject.group
-	version = rootProject.version
-
+allprojects {
 	repositories {
 		mavenCentral()
 	}
+}
+
+subprojects {
+	group = rootProject.group
+	version = rootProject.version
 
 	plugins.withId("org.jetbrains.kotlin.multiplatform") {
 		configure<KotlinMultiplatformExtension> {
 			sourceSets.all {
 				languageSettings.apply {
-					enableLanguageFeature("InlineClasses")
-					useExperimentalAnnotation("kotlin.RequiresOptIn")
-					useExperimentalAnnotation("kotlin.ExperimentalUnsignedTypes")
-					useExperimentalAnnotation("io.ktor.utils.io.core.ExperimentalIoApi")
+//					enableLanguageFeature("InlineClasses")
+//					useExperimentalAnnotation("kotlin.RequiresOptIn")
+//					useExperimentalAnnotation("kotlin.ExperimentalUnsignedTypes")
+//					useExperimentalAnnotation("io.ktor.utils.io.core.ExperimentalIoApi")
 				}
 			}
 
@@ -59,6 +61,26 @@ subprojects {
 						compileKotlinTask.enabled = false
 					}
 					binaries.all { linkTask.enabled = false }
+				}
+
+				compilations.all {
+					compilerOptions.configure {
+						freeCompilerArgs.add("-linker-option") //TODO: Do this right and have konan use an updated libc version
+						freeCompilerArgs.add("--allow-shlib-undefined")
+						freeCompilerArgs.add("-linker-option")
+						freeCompilerArgs.add("--unresolved-symbols=ignore-all")
+						freeCompilerArgs.add("-linker-option")
+						freeCompilerArgs.add("-L/usr/lib")
+					}
+				}
+			}
+
+			targets.all {
+				compilations.all {
+					compilerOptions.configure {
+						freeCompilerArgs.add("-opt-in=kotlinx.cinterop.ExperimentalForeignApi")
+						freeCompilerArgs.add("-Xexpect-actual-classes")
+					}
 				}
 			}
 		}

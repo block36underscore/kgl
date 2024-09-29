@@ -27,7 +27,7 @@ actual class PipelineCache(
 ) : VkHandleNative<VkPipelineCache>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val pipelineCache = this
 		val device = pipelineCache.device
 		VirtualStack.push()

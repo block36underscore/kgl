@@ -24,7 +24,7 @@ actual class ImageView(override val ptr: VkImageView, actual val image: Image) :
 	VkHandle {
 	internal val dispatchTable = image.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val imageView = this
 		val device = imageView.image.device
 		VirtualStack.push()

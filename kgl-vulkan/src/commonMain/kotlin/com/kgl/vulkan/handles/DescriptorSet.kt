@@ -22,4 +22,6 @@ expect class DescriptorSet : VkHandle {
 	val descriptorPool: DescriptorPool
 
 	fun updateWithTemplate(descriptorUpdateTemplate: DescriptorUpdateTemplate, data: Memory)
+
+	override fun close()
 }

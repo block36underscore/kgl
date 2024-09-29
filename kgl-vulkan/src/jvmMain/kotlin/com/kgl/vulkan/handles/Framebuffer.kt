@@ -28,7 +28,7 @@ actual class Framebuffer(
 	actual val height: UInt,
 	actual val layers: UInt
 ) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val framebuffer = this
 		val device = framebuffer.device
 		MemoryStack.stackPush()

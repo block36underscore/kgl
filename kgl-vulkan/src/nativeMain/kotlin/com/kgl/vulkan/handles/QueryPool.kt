@@ -26,7 +26,7 @@ actual class QueryPool(override val ptr: VkQueryPool, actual val device: Device)
 	VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val queryPool = this
 		val device = queryPool.device
 		VirtualStack.push()

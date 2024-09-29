@@ -8,7 +8,7 @@ plugins {
 	`maven-publish`
 }
 
-val glfwVersion = "3.3"
+val glfwVersion = "3.4"
 val downloadsDir = buildDir.resolve("downloads")
 val glfwWin64Dir = downloadsDir.resolve("glfw.bin.WIN64")
 val glfwMacosDir = downloadsDir.resolve("glfw.bin.MACOS")
@@ -58,7 +58,7 @@ val lwjglNatives: String by rootProject.extra
 kotlin {
 	jvm {
 		compilations.all {
-			kotlinOptions.jvmTarget = "1.8"
+			kotlinOptions.jvmTarget = "21"
 		}
 	}
 

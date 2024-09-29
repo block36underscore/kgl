@@ -20,7 +20,7 @@ import org.lwjgl.system.*
 import org.lwjgl.vulkan.VK11.*
 
 actual class SamplerYcbcrConversion(override val ptr: Long, actual val device: Device) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val ycbcrConversion = this
 		val device = ycbcrConversion.device
 		MemoryStack.stackPush()

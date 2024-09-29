@@ -27,4 +27,6 @@ expect class DisplayModeKHR : VkHandle {
 	fun getDisplayPlaneCapabilities(planeIndex: UInt): DisplayPlaneCapabilitiesKHR
 
 	fun getDisplayPlaneCapabilities2(block: DisplayPlaneInfo2KHRBuilder.() -> Unit = {}): DisplayPlaneCapabilities2KHR
+
+	override fun close()
 }

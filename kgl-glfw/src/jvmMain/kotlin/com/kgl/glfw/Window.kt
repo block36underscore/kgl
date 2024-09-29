@@ -542,7 +542,7 @@ actual class Window private constructor(val ptr: Long) : Closeable {
 		glfwSwapBuffers(ptr)
 	}
 
-	override fun close() {
+	override actual fun close() {
 		// Free potentially allocated callbacks.
 		glfwSetWindowPosCallback(ptr, null)?.free()
 		glfwSetWindowSizeCallback(ptr, null)?.free()

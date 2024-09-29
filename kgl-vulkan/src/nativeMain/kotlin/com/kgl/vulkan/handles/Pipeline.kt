@@ -26,7 +26,7 @@ actual class Pipeline(override val ptr: VkPipeline, actual val device: Device) :
 	VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val pipeline = this
 		val device = pipeline.device
 		VirtualStack.push()

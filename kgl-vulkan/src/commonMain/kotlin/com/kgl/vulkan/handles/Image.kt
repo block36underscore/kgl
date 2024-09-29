@@ -52,4 +52,6 @@ expect class Image : VkHandle {
 	fun getSparseMemoryRequirements2(
 		block: ImageSparseMemoryRequirementsInfo2Builder.() -> Unit = {}
 	): List<SparseImageMemoryRequirements2>
+
+	override fun close()
 }

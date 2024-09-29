@@ -45,7 +45,7 @@ actual class DeviceMemory(
 			}
 		}
 
-	override fun close() {
+	override actual fun close() {
 		val memory = this
 		val device = memory.device
 		VirtualStack.push()

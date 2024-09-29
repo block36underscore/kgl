@@ -17,4 +17,6 @@ package com.kgl.vulkan.handles
 
 import com.kgl.vulkan.utils.*
 
-expect class DisplayKHR : VkHandle
+expect class DisplayKHR : VkHandle {
+	override fun close()
+}

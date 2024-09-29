@@ -24,4 +24,6 @@ expect class Semaphore : VkHandle {
 	fun getFdKHR(block: SemaphoreGetFdInfoKHRBuilder.() -> Unit = {}): Int
 
 	fun importFdKHR(block: ImportSemaphoreFdInfoKHRBuilder.() -> Unit = {})
+
+	override fun close()
 }

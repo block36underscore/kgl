@@ -18,7 +18,7 @@ package com.kgl.vulkan.handles
 import com.kgl.vulkan.utils.*
 
 actual class DisplayKHR(override val ptr: Long) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		TODO()
 	}
 }

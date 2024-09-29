@@ -19,7 +19,7 @@ import com.kgl.vulkan.utils.*
 import cvulkan.*
 
 actual class DisplayKHR(override val ptr: VkDisplayKHR) : VkHandleNative<VkDisplayKHR>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		TODO()
 	}
 }

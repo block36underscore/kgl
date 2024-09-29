@@ -18,10 +18,11 @@ package com.kgl.stb
 import io.ktor.utils.io.bits.*
 import io.ktor.utils.io.core.*
 
-@OptIn(ExperimentalIoApi::class)
 expect class STBImage : Closeable {
 	val buffer: Memory
 	val info: STBInfo
+
+	override fun close()
 
 	companion object {
 		fun load(buffer: Memory, desiredChannels: Channels? = null): STBImage

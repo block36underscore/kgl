@@ -25,4 +25,6 @@ expect class DescriptorSetLayout : VkHandle {
 		pipelineLayout: PipelineLayout,
 		block: DescriptorUpdateTemplateCreateInfoBuilder.() -> Unit
 	): DescriptorUpdateTemplate
+
+	override fun close()
 }

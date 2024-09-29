@@ -29,4 +29,6 @@ expect class CommandPool : VkHandle {
 	fun free(commandBuffers: Collection<CommandBuffer>)
 
 	fun trim()
+
+	override fun close()
 }

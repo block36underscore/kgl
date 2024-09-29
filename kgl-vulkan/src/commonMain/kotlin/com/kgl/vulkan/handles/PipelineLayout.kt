@@ -19,4 +19,6 @@ import com.kgl.vulkan.utils.*
 
 expect class PipelineLayout : VkHandle {
 	val device: Device
+
+	override fun close()
 }

@@ -29,4 +29,6 @@ expect class QueryPool : VkHandle {
 		stride: ULong,
 		flags: VkFlag<QueryResult>?
 	): Boolean
+
+	override fun close()
 }

@@ -36,7 +36,7 @@ actual class RenderPass(override val ptr: Long, actual val device: Device) : VkH
 			}
 		}
 
-	override fun close() {
+	override actual fun close() {
 		val renderPass = this
 		val device = renderPass.device
 		MemoryStack.stackPush()

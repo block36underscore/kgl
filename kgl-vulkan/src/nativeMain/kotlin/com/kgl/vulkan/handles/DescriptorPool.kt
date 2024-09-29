@@ -28,7 +28,7 @@ actual class DescriptorPool(
 ) : VkHandleNative<VkDescriptorPool>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val descriptorPool = this
 		val device = descriptorPool.device
 		VirtualStack.push()

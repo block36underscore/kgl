@@ -572,7 +572,7 @@ actual class Window private constructor(val ptr: CPointer<GLFWwindow>) : Closeab
 		}
 	}
 
-	override fun close() {
+	override actual fun close() {
 		glfwGetWindowUserPointer(ptr)!!.asStableRef<Window>().dispose()
 		glfwDestroyWindow(ptr)
 	}

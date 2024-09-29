@@ -22,4 +22,6 @@ expect class RenderPass : VkHandle {
 	val device: Device
 
 	val renderAreaGranularity: Extent2D
+
+	override fun close()
 }

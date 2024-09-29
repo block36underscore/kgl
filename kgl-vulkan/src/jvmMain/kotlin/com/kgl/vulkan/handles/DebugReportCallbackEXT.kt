@@ -25,7 +25,7 @@ actual class DebugReportCallbackEXT(
 	actual val instance: Instance,
 	private val callback: VkDebugReportCallbackEXT
 ) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		MemoryStack.stackPush()
 		try {
 			vkDestroyDebugReportCallbackEXT(instance.toVkType(), ptr, null)

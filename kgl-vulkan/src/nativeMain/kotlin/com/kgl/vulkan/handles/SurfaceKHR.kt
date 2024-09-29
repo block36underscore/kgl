@@ -26,7 +26,7 @@ actual class SurfaceKHR(
 ) : VkHandleNative<VkSurfaceKHR>(), VkHandle {
 	internal val dispatchTable = instance.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val surface = this
 		val instance = surface.instance
 		VirtualStack.push()

@@ -26,4 +26,6 @@ expect class DescriptorPool : VkHandle {
 	fun allocate(setLayouts: Collection<DescriptorSetLayout>): List<DescriptorSet>
 
 	fun free(descriptorSets: Collection<DescriptorSet>)
+
+	override fun close()
 }

@@ -131,4 +131,6 @@ expect class PhysicalDevice : VkHandle {
 	): List<SurfaceFormat2KHR>
 
 	fun getDisplayModeProperties2KHR(display: DisplayKHR): List<DisplayModeProperties2KHR>
+
+	override fun close()
 }

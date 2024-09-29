@@ -100,7 +100,7 @@ actual class Image(
 			}
 		}
 
-	override fun close() {
+	override actual fun close() {
 		val image = this
 		val device = image.device
 		VirtualStack.push()

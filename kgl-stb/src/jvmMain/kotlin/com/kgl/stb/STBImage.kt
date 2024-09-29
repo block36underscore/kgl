@@ -29,7 +29,7 @@ actual class STBImage(
 	actual val info: STBInfo
 ) : Closeable {
 
-	override fun close() {
+	override actual fun close() {
 		stbi_image_free(buffer.buffer)
 	}
 

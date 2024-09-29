@@ -50,7 +50,7 @@ actual class Device(override val ptr: VkDevice, actual val physicalDevice: Physi
 			}
 		}
 
-	override fun close() {
+	override actual fun close() {
 		val device = this
 		VirtualStack.push()
 		try {

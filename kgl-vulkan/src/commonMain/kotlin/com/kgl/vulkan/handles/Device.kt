@@ -171,4 +171,6 @@ expect class Device : VkHandle {
 	fun bindAccelerationStructureMemoryNV(block: BindAccelerationStructureMemoryInfoNVsBuilder.() -> Unit)
 
 	fun updateDescriptorSets(block: UpdateDescriptorSetsBuilder.() -> Unit)
+
+	override fun close()
 }

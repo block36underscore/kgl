@@ -27,7 +27,7 @@ actual class DescriptorSet(
 ) : VkHandleNative<VkDescriptorSet>(), VkHandle {
 	internal val dispatchTable = descriptorPool.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		VirtualStack.push()
 		try {
 			val descriptorSet = VirtualStack.alloc<VkDescriptorSetVar> { value = this@DescriptorSet.ptr }

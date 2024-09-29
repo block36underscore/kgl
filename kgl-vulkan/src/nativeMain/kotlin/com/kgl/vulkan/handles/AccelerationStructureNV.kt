@@ -30,7 +30,7 @@ actual class AccelerationStructureNV(
 ) : VkHandleNative<VkAccelerationStructureNV>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val accelerationStructure = this
 		val device = accelerationStructure.device
 		VirtualStack.push()

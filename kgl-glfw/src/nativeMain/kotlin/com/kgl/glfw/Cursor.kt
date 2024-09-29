@@ -46,7 +46,7 @@ actual class Cursor : Closeable {
 		ptr = glfwCreateStandardCursor(shape.value)
 	}
 
-	override fun close() {
+	override actual fun close() {
 		glfwDestroyCursor(ptr)
 	}
 

@@ -29,7 +29,7 @@ actual class DisplayModeKHR(
 ) : VkHandleNative<VkDisplayModeKHR>(), VkHandle {
 	internal val dispatchTable = physicalDevice.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		TODO()
 	}
 

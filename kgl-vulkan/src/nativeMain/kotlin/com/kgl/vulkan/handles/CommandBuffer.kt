@@ -29,7 +29,7 @@ actual class CommandBuffer(
 ) : VkHandleNative<VkCommandBuffer>(), VkHandle {
 	internal val dispatchTable = commandPool.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		VirtualStack.push()
 		try {
 			val commandBuffer = VirtualStack.alloc<VkCommandBufferVar> { value = this@CommandBuffer.ptr }

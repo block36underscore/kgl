@@ -42,4 +42,6 @@ expect class Queue : VkHandle {
 	fun endDebugUtilsLabelEXT()
 
 	fun insertDebugUtilsLabelEXT(block: DebugUtilsLabelEXTBuilder.() -> Unit = {})
+
+	override fun close()
 }

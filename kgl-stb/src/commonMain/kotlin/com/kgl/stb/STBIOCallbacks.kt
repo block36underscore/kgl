@@ -8,7 +8,6 @@ interface STBIOCallbacks {
 	 * Fill 'data' with 'size' bytes.
 	 * @return number of bytes actually read
 	 */
-	@OptIn(ExperimentalIoApi::class)
 	fun read(data: Memory): Int
 
 	/**

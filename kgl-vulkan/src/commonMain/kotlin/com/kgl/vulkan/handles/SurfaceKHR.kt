@@ -19,4 +19,6 @@ import com.kgl.vulkan.utils.*
 
 expect class SurfaceKHR : VkHandle {
 	val instance: Instance
+
+	override fun close()
 }

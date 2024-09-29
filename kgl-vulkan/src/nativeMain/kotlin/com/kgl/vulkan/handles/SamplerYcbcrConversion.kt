@@ -26,7 +26,7 @@ actual class SamplerYcbcrConversion(
 ) : VkHandleNative<VkSamplerYcbcrConversion>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val ycbcrConversion = this
 		val device = ycbcrConversion.device
 		VirtualStack.push()

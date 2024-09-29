@@ -29,7 +29,7 @@ actual class CommandPool(
 ) : VkHandleNative<VkCommandPool>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val commandPool = this
 		val device = commandPool.device
 		VirtualStack.push()

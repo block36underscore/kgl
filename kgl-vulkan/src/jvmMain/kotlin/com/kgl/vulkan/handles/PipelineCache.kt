@@ -21,7 +21,7 @@ import org.lwjgl.system.*
 import org.lwjgl.vulkan.VK11.*
 
 actual class PipelineCache(override val ptr: Long, actual val device: Device) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val pipelineCache = this
 		val device = pipelineCache.device
 		MemoryStack.stackPush()

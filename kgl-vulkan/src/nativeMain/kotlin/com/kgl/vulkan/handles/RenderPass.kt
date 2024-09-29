@@ -40,7 +40,7 @@ actual class RenderPass(override val ptr: VkRenderPass, actual val device: Devic
 			}
 		}
 
-	override fun close() {
+	override actual fun close() {
 		val renderPass = this
 		val device = renderPass.device
 		VirtualStack.push()

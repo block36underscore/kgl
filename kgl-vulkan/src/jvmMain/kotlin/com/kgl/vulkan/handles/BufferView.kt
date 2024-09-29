@@ -20,7 +20,7 @@ import org.lwjgl.system.*
 import org.lwjgl.vulkan.VK11.*
 
 actual class BufferView(override val ptr: Long, actual val buffer: Buffer) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val bufferView = this
 		val device = bufferView.buffer.device
 		MemoryStack.stackPush()

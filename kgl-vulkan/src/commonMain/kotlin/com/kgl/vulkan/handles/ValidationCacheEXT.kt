@@ -24,4 +24,6 @@ expect class ValidationCacheEXT : VkHandle {
 	fun getData(data: Memory?)
 
 	fun merge(srcCaches: Collection<ValidationCacheEXT>)
+
+	override fun close()
 }

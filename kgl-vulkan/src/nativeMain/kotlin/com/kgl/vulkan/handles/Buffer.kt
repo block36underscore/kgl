@@ -51,7 +51,7 @@ actual class Buffer(
 			}
 		}
 
-	override fun close() {
+	override actual fun close() {
 		val buffer = this
 		val device = buffer.device
 		VirtualStack.push()

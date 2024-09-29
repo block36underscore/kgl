@@ -26,7 +26,7 @@ actual class DescriptorUpdateTemplate(
 ) : VkHandleNative<VkDescriptorUpdateTemplate>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val descriptorUpdateTemplate = this
 		val device = descriptorUpdateTemplate.device
 		VirtualStack.push()

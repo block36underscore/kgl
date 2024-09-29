@@ -23,7 +23,7 @@ import kotlinx.cinterop.*
 actual class Sampler(override val ptr: VkSampler, actual val device: Device) : VkHandleNative<VkSampler>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val sampler = this
 		val device = sampler.device
 		VirtualStack.push()

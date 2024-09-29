@@ -23,7 +23,7 @@ import org.lwjgl.vulkan.VK10.*
 
 actual class DescriptorSet(override val ptr: Long, actual val descriptorPool: DescriptorPool) : VkHandleJVM<Long>(),
 	VkHandle {
-	override fun close() {
+	override actual fun close() {
 		vkFreeDescriptorSets(descriptorPool.device.ptr, descriptorPool.ptr, ptr)
 	}
 

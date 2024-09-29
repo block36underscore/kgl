@@ -22,7 +22,7 @@ import org.lwjgl.system.*
 import org.lwjgl.vulkan.VK11.*
 
 actual class QueryPool(override val ptr: Long, actual val device: Device) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val queryPool = this
 		val device = queryPool.device
 		MemoryStack.stackPush()

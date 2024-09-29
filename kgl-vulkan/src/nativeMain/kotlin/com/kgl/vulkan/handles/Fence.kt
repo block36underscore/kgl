@@ -24,7 +24,7 @@ import kotlinx.cinterop.*
 actual class Fence(override val ptr: VkFence, actual val device: Device) : VkHandleNative<VkFence>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val fence = this
 		val device = fence.device
 		VirtualStack.push()

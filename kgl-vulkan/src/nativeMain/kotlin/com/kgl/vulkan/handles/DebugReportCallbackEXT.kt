@@ -27,7 +27,7 @@ actual class DebugReportCallbackEXT(
 ) : VkHandleNative<VkDebugReportCallbackEXT>(), VkHandle {
 	internal val dispatchTable = instance.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		VirtualStack.push()
 		try {
 			dispatchTable.vkDestroyDebugReportCallbackEXT!!(instance.toVkType(), ptr, null)

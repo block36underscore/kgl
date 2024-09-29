@@ -27,7 +27,7 @@ actual class CommandPool(
 	actual val device: Device,
 	actual val queueFamilyIndex: UInt
 ) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val commandPool = this
 		val device = commandPool.device
 		MemoryStack.stackPush()

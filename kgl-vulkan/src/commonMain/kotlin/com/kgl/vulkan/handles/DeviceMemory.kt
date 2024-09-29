@@ -31,4 +31,6 @@ expect class DeviceMemory : VkHandle {
 	fun unmap()
 
 	fun getFdKHR(block: MemoryGetFdInfoKHRBuilder.() -> Unit = {}): Int
+
+	override fun close()
 }

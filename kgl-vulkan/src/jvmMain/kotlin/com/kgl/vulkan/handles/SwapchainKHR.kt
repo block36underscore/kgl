@@ -34,7 +34,7 @@ actual class SwapchainKHR(
 	actual val imageExtent: Extent2D,
 	actual val imageArrayLayers: UInt
 ) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		MemoryStack.stackPush()
 		try {
 			vkDestroySwapchainKHR(device.toVkType(), ptr, null)

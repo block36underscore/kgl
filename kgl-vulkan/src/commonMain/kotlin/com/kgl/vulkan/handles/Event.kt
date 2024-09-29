@@ -25,4 +25,6 @@ expect class Event : VkHandle {
 	fun set()
 
 	fun reset()
+
+	override fun close()
 }

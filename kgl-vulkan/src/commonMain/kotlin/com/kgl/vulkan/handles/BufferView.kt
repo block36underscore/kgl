@@ -19,4 +19,6 @@ import com.kgl.vulkan.utils.*
 
 expect class BufferView : VkHandle {
 	val buffer: Buffer
+
+	override fun close()
 }

@@ -26,7 +26,7 @@ actual class BufferView(
 ) : VkHandleNative<VkBufferView>(), VkHandle {
 	internal val dispatchTable = buffer.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val bufferView = this
 		val device = bufferView.buffer.device
 		VirtualStack.push()

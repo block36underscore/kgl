@@ -23,7 +23,7 @@ import org.lwjgl.vulkan.NVRayTracing.*
 import org.lwjgl.vulkan.VK11.*
 
 actual class Pipeline(override val ptr: Long, actual val device: Device) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val pipeline = this
 		val device = pipeline.device
 		MemoryStack.stackPush()

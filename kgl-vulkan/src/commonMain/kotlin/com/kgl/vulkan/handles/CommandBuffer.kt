@@ -399,4 +399,6 @@ expect class CommandBuffer : VkHandle {
 		height: UInt,
 		depth: UInt
 	)
+
+	override fun close()
 }

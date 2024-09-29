@@ -71,15 +71,15 @@ internal inline fun Collection<VkFlag<*>>.toVkType(): CPointer<UIntVar> {
 //internal inline fun <reified U : CPointed, reified T : CPointer<U>> VkHandleNative<T>.toVkType(): CPointer<U> {
 //	return ptr
 //}
-internal inline fun <reified U : CPointed, reified T : CPointer<U>> VkHandleNative<T>?.toVkType(): CPointer<U>? {
+internal fun <U : CPointed, T : CPointer<U>> VkHandleNative<T>?.toVkType(): CPointer<U>? {
 	return this?.ptr
 }
 
-internal inline fun <reified U : CPointed, reified T : CPointer<U>> Collection<VkHandleNative<T>>.toVkType(): CArrayPointer<CPointerVar<U>> {
+internal fun <U : CPointed, T : CPointer<U>> Collection<VkHandleNative<T>>.toVkType(): CArrayPointer<CPointerVar<U>> {
 	return mapToCArray(VirtualStack) { value = it.ptr }
 }
 
-internal inline fun <reified U : CPointed, reified T : CPointer<U>> Array<VkHandleNative<T>>.toVkType(): CArrayPointer<CPointerVar<U>> {
+internal fun <U : CPointed, T : CPointer<U>> Array<VkHandleNative<T>>.toVkType(): CArrayPointer<CPointerVar<U>> {
 	return mapToCArray(VirtualStack) { value = it.ptr }
 }
 

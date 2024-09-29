@@ -27,7 +27,7 @@ actual class Semaphore(
 ) : VkHandleNative<VkSemaphore>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val semaphore = this
 		val device = semaphore.device
 		VirtualStack.push()

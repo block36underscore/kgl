@@ -20,7 +20,7 @@ import org.lwjgl.system.*
 import org.lwjgl.vulkan.KHRSurface.*
 
 actual class SurfaceKHR(override val ptr: Long, actual val instance: Instance) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val surface = this
 		val instance = surface.instance
 		MemoryStack.stackPush()

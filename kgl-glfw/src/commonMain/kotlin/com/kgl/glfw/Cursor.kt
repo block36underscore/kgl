@@ -29,4 +29,6 @@ expect class Cursor : Closeable {
 		HResize,
 		VResize;
 	}
+
+	override fun close()
 }

@@ -47,4 +47,6 @@ expect class SwapchainKHR : VkHandle {
 	val refreshCycleDurationGOOGLE: RefreshCycleDurationGOOGLE
 
 	val pastPresentationTimingGOOGLE: List<PastPresentationTimingGOOGLE>
+
+	override fun close()
 }

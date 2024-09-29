@@ -21,7 +21,7 @@ import org.lwjgl.vulkan.VK11.*
 
 actual class DescriptorUpdateTemplate(override val ptr: Long, actual val device: Device) : VkHandleJVM<Long>(),
 	VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val descriptorUpdateTemplate = this
 		val device = descriptorUpdateTemplate.device
 		MemoryStack.stackPush()

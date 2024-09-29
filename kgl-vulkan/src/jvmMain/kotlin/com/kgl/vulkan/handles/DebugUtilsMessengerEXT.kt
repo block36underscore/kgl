@@ -25,7 +25,7 @@ actual class DebugUtilsMessengerEXT(
 	actual val instance: Instance,
 	val callback: VkDebugUtilsMessengerCallbackEXT
 ) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val messenger = this
 		val instance = messenger.instance
 		MemoryStack.stackPush()

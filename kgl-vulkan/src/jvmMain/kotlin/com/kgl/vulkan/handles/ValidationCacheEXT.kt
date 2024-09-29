@@ -22,7 +22,7 @@ import org.lwjgl.vulkan.EXTValidationCache.*
 import org.lwjgl.vulkan.VK11.*
 
 actual class ValidationCacheEXT(override val ptr: Long, actual val device: Device) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val validationCache = this
 		val device = validationCache.device
 		MemoryStack.stackPush()

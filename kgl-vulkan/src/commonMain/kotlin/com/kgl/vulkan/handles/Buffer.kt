@@ -39,4 +39,6 @@ expect class Buffer : VkHandle {
 	): BufferView
 
 	fun getMemoryRequirements2(block: BufferMemoryRequirementsInfo2Builder.() -> Unit = {}): MemoryRequirements2
+
+	override fun close()
 }

@@ -26,4 +26,6 @@ expect class PipelineCache : VkHandle {
 	fun getData(data: Memory): Boolean
 
 	fun merge(srcCaches: Collection<PipelineCache>)
+
+	override fun close()
 }

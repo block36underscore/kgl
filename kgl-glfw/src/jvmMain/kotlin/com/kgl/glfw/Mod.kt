@@ -18,7 +18,7 @@ package com.kgl.glfw
 import com.kgl.core.*
 import org.lwjgl.glfw.GLFW.*
 
-actual enum class Mod(override val value: Int) : Flag<Mod> {
+actual enum class Mod(override actual val value: Int) : Flag<Mod> {
 	Shift(GLFW_MOD_SHIFT),
 	Control(GLFW_MOD_CONTROL),
 	Alt(GLFW_MOD_ALT),

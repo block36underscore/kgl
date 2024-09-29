@@ -26,7 +26,7 @@ actual class PipelineLayout(
 ) : VkHandleNative<VkPipelineLayout>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val pipelineLayout = this
 		val device = pipelineLayout.device
 		VirtualStack.push()

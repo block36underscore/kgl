@@ -26,7 +26,7 @@ actual class IndirectCommandsLayoutNVX(
 ) : VkHandleNative<VkIndirectCommandsLayoutNVX>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val indirectCommandsLayout = this
 		val device = indirectCommandsLayout.device
 		VirtualStack.push()

@@ -45,7 +45,7 @@ actual class Queue(
 			}
 		}
 
-	override fun close() {
+	override actual fun close() {
 		TODO()
 	}
 

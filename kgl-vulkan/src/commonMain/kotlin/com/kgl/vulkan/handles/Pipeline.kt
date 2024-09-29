@@ -35,4 +35,6 @@ expect class Pipeline : VkHandle {
 		groupCount: UInt,
 		data: Memory
 	)
+
+	override fun close()
 }

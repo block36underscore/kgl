@@ -26,4 +26,6 @@ expect class Fence : VkHandle {
 	fun getFdKHR(block: FenceGetFdInfoKHRBuilder.() -> Unit = {}): Int
 
 	fun importFdKHR(block: ImportFenceFdInfoKHRBuilder.() -> Unit = {})
+
+	override fun close()
 }

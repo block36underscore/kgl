@@ -19,4 +19,6 @@ import com.kgl.vulkan.utils.*
 
 expect class ImageView : VkHandle {
 	val image: Image
+
+	override fun close()
 }

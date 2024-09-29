@@ -30,4 +30,6 @@ expect class AccelerationStructureNV : VkHandle {
 		type: AccelerationStructureMemoryRequirementsTypeNV,
 		block: AccelerationStructureMemoryRequirementsInfoNVBuilder.() -> Unit = {}
 	): MemoryRequirements2
+
+	override fun close()
 }

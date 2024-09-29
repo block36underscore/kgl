@@ -27,7 +27,7 @@ actual class ValidationCacheEXT(
 ) : VkHandleNative<VkValidationCacheEXT>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val validationCache = this
 		val device = validationCache.device
 		VirtualStack.push()

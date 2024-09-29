@@ -19,4 +19,6 @@ import com.kgl.vulkan.utils.*
 
 expect class SamplerYcbcrConversion : VkHandle {
 	val device: Device
+
+	override fun close()
 }

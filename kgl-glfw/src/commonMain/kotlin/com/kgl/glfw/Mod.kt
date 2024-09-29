@@ -21,5 +21,7 @@ expect enum class Mod : Flag<Mod> {
 	Shift,
 	Control,
 	Alt,
-	Super
+	Super;
+
+	override val value: Int
 }

@@ -27,7 +27,7 @@ actual class DescriptorSetLayout(
 ) : VkHandleNative<VkDescriptorSetLayout>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val descriptorSetLayout = this
 		val device = descriptorSetLayout.device
 		VirtualStack.push()

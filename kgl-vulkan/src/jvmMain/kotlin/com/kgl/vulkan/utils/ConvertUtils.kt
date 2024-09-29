@@ -124,12 +124,12 @@ internal inline fun Collection<VkFlag<*>>.toVkType(): IntBuffer {
 }
 
 @JvmName("toNativeType_")
-internal inline fun <reified T : Pointer> VkHandleJVM<T>.toVkType(): T = ptr
+internal fun <T : Pointer> VkHandleJVM<T>.toVkType(): T = ptr
 
 internal inline fun VkHandleJVM<Long>?.toVkType(): Long = this?.ptr ?: 0
 
 @JvmName("toNativeType__")
-internal inline fun <reified T : Pointer> Collection<VkHandleJVM<T>>.toVkType(): PointerBuffer {
+internal fun <T : Pointer> Collection<VkHandleJVM<T>>.toVkType(): PointerBuffer {
 	return MemoryStack.stackGet().mallocPointer(size).also {
 		forEachIndexed { index, item -> it.put(index, item.ptr) }
 	}
@@ -142,7 +142,7 @@ internal inline fun Collection<VkHandleJVM<Long>>.toVkType(): LongBuffer {
 	}
 }
 
-internal inline fun <reified T : Pointer> Array<out VkHandleJVM<T>>.toVkType(): PointerBuffer {
+internal fun <T : Pointer> Array<out VkHandleJVM<T>>.toVkType(): PointerBuffer {
 	return MemoryStack.stackGet().mallocPointer(size).also {
 		forEachIndexed { index, item -> it.put(index, item.ptr) }
 	}

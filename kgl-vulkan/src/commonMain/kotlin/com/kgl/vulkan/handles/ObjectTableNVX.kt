@@ -25,4 +25,6 @@ expect class ObjectTableNVX : VkHandle {
 	fun registerObjects(objectIndices: UIntArray, block: ObjectTableEntryNVXsBuilder.() -> Unit)
 
 	fun unregisterObjects(objectEntryTypes: Collection<ObjectEntryTypeNVX>, objectIndices: UIntArray)
+
+	override fun close()
 }

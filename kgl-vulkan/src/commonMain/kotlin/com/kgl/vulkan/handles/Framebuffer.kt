@@ -24,4 +24,6 @@ expect class Framebuffer : VkHandle {
 	val width: UInt
 	val height: UInt
 	val layers: UInt
+
+	override fun close()
 }

@@ -18,4 +18,4 @@ package com.kgl.glfw
 import io.ktor.utils.io.bits.*
 import io.ktor.utils.io.core.*
 
-data class Image @ExperimentalIoApi constructor(val pixels: Memory, val width: Int, val height: Int)
+data class Image constructor(val pixels: Memory, val width: Int, val height: Int)

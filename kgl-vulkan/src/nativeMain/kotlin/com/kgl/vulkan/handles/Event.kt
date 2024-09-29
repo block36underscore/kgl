@@ -23,7 +23,7 @@ import kotlinx.cinterop.*
 actual class Event(override val ptr: VkEvent, actual val device: Device) : VkHandleNative<VkEvent>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val event = this
 		val device = event.device
 		VirtualStack.push()

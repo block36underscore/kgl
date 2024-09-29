@@ -33,7 +33,7 @@ actual class SwapchainKHR(
 ) : VkHandleNative<VkSwapchainKHR>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		VirtualStack.push()
 		try {
 			dispatchTable.vkDestroySwapchainKHR!!(device.toVkType(), ptr, null)

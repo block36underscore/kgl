@@ -26,7 +26,7 @@ actual class ShaderModule(
 ) : VkHandleNative<VkShaderModule>(), VkHandle {
 	internal val dispatchTable = device.dispatchTable
 
-	override fun close() {
+	override actual fun close() {
 		val shaderModule = this
 		val device = shaderModule.device
 		VirtualStack.push()

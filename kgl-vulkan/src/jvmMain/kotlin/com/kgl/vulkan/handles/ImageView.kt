@@ -20,7 +20,7 @@ import org.lwjgl.system.*
 import org.lwjgl.vulkan.VK11.*
 
 actual class ImageView(override val ptr: Long, actual val image: Image) : VkHandleJVM<Long>(), VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val imageView = this
 		val device = imageView.image.device
 		MemoryStack.stackPush()

@@ -21,7 +21,7 @@ import org.lwjgl.vulkan.NVXDeviceGeneratedCommands.*
 
 actual class IndirectCommandsLayoutNVX(override val ptr: Long, actual val device: Device) : VkHandleJVM<Long>(),
 	VkHandle {
-	override fun close() {
+	override actual fun close() {
 		val indirectCommandsLayout = this
 		val device = indirectCommandsLayout.device
 		MemoryStack.stackPush()
