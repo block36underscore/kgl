@@ -1127,7 +1127,7 @@ open class GenerateVulkan : DefaultTask() {
 											add("TODO()")
 										}
 									}
-									null -> error(struct.name + "->" + member.name + " has no KGL representation")
+									else -> error(struct.name + "->" + member.name + " has no KGL representation")
 								}
 							}
 
@@ -1375,7 +1375,11 @@ open class GenerateVulkan : DefaultTask() {
 					.filter { it != NULL_TERMINATED }
 					.groupBy { it }
 					.map { it.value.size }
-					.max() ?: 0
+					.let {
+						return@let if (it.isEmpty()) 0
+						else it.max() ?: 0
+					}
+
 				if (maxLengthGroupSize > 1) {
 					println("Skipping `${struct.name}` because length member is shared.")
 					continue
